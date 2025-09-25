@@ -15,6 +15,7 @@
 
         socket.on('connect' , function(){
             console.log('Se estableció conexión con el servidor');
+
         });
 
         socket.on('disconnect' , function(){
@@ -22,6 +23,12 @@
         });
 
         socket.emit('message', {name: 'elvis'});
+
+        socket.on('bandas_activas', (payload) => {
+            console.clear();
+            console.table(payload);
+        });
+        
     </script>
 </body>
 </html>
